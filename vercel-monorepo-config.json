@@ -1,0 +1,33 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/demo-creator/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/demo-creator/(.*)",
+      "dest": "/apps/demo-creator/$1"
+    },
+    {
+      "src": "/demo-creator",
+      "dest": "/apps/demo-creator/index.html"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/demo-creator",
+      "destination": "/apps/demo-creator/index.html"
+    },
+    {
+      "source": "/demo-creator/:path*",
+      "destination": "/apps/demo-creator/:path*"
+    }
+  ]
+}

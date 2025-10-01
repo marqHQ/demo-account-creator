@@ -1,0 +1,47 @@
+[
+  {
+    "key": "cmd+shift+d",
+    "command": "workbench.action.tasks.runTask",
+    "args": "🚀 Start Dev (Clean)"
+  },
+  {
+    "key": "cmd+shift+t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "🧪 Test with Coverage"
+  },
+  {
+    "key": "cmd+shift+l",
+    "command": "workbench.action.tasks.runTask",
+    "args": "🔍 Lint & Fix"
+  },
+  {
+    "key": "cmd+shift+b",
+    "command": "workbench.action.tasks.runTask",
+    "args": "🏗️ Build Production"
+  },
+  {
+    "key": "cmd+shift+g",
+    "command": "workbench.action.tasks.runTask",
+    "args": "📊 Git Status"
+  },
+  {
+    "key": "cmd+shift+p r",
+    "command": "workbench.action.tasks.runTask",
+    "args": "📋 Pre-PR Checklist"
+  },
+  {
+    "key": "cmd+shift+f",
+    "command": "workbench.action.tasks.runTask",
+    "args": "🌿 Create Feature Branch"
+  },
+  {
+    "key": "cmd+shift+c",
+    "command": "workbench.action.tasks.runTask",
+    "args": "💾 Quick Commit"
+  },
+  {
+    "key": "cmd+shift+u",
+    "command": "workbench.action.tasks.runTask",
+    "args": "🚀 Push Current Branch"
+  }
+]

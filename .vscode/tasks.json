@@ -1,0 +1,138 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 Start Dev (Clean)",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/marq-demo-creator"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "🧪 Test with Coverage",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:ci"],
+      "options": {
+        "cwd": "${workspaceFolder}/marq-demo-creator"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🔍 Lint & Fix",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "lint:fix"],
+      "options": {
+        "cwd": "${workspaceFolder}/marq-demo-creator"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🏗️ Build Production",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "options": {
+        "cwd": "${workspaceFolder}/marq-demo-creator"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "📊 Git Status",
+      "type": "shell",
+      "command": "git status -sb && echo '\n=== Recent Commits ===' && git log --oneline -5",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🌿 Create Feature Branch",
+      "type": "shell",
+      "command": "echo 'Enter feature name (e.g., add-dark-mode):' && read FEATURE_NAME && SAFE_NAME=$(echo \"$FEATURE_NAME\" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\\|-$//g') && git checkout -b feature/$SAFE_NAME && echo \"✅ Created feature/$SAFE_NAME branch from '$FEATURE_NAME'\"",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "💾 Quick Commit",
+      "type": "shell",
+      "command": "git add . && echo 'Enter commit message (e.g., feat: add new feature):' && read COMMIT_MSG && git commit -m \"$COMMIT_MSG\"",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🚀 Push Current Branch",
+      "type": "shell",
+      "command": "BRANCH=$(git branch --show-current) && git push -u origin $BRANCH && echo '✅ Pushed to origin/$BRANCH'",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🧹 Clean & Reset",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-c", "npm run clean && rm -rf node_modules && npm install && echo '✅ Project cleaned and dependencies reinstalled'"],
+      "options": {
+        "cwd": "${workspaceFolder}/marq-demo-creator"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    }
+  ]
+}

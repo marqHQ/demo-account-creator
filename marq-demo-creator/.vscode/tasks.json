@@ -1,0 +1,127 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 Start Dev (Clean)",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "🧪 Test with Coverage",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:ci"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🔍 Lint & Fix",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "lint:fix"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🏗️ Build Production",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "📊 Git Status",
+      "type": "shell",
+      "command": "git",
+      "args": ["status", "-sb"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🌿 Create Feature Branch",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-c", "echo 'Enter feature name:' && read FEATURE_NAME && SAFE_NAME=$(echo \"$FEATURE_NAME\" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\\|-$//g') && git checkout -b feature/$SAFE_NAME && echo \"✅ Created feature/$SAFE_NAME branch\""],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "💾 Quick Commit",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-c", "git add . && echo 'Enter commit message:' && read COMMIT_MSG && git commit -m \"$COMMIT_MSG\""],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🚀 Push Current Branch",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-c", "BRANCH=$(git branch --show-current) && git push -u origin $BRANCH && echo '✅ Pushed to origin/$BRANCH'"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🧹 Clean & Reset",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-c", "npm run clean && rm -rf node_modules && npm install && echo '✅ Project cleaned and dependencies reinstalled'"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    }
+  ]
+}

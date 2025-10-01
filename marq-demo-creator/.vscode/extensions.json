@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "rangav.vscode-thunder-client",
+    "yzhang.markdown-all-in-one",
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-pg",
+    "streetsidesoftware.code-spell-checker",
+    "usernamehw.errorlens",
+    "formulahendry.auto-rename-tag",
+    "supabase.supabase-snippets",
+    "pulkitgangwar.nextjs-snippets"
+  ]
+}
